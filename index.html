@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pop Art Salon</title>
+
+  <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add background to expanded mobile navbar */
+    @media (max-width: 991.98px) {
+      .navbar-collapse.show, .navbar-collapse.collapsing {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 0.5rem; /* Add some space from the top */
+      }
+    }
+    /* Custom Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      border: 2px solid #ff007a; /* Hot Pink Border */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-top: 10px !important;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .dropdown-item {
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+    .dropdown-item:hover, .dropdown-item:focus {
+      background-color: #ff007a; /* Hot Pink on hover */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔸 Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" >
+    <div class="container-fluid px-5">
+      <!-- Left Logo -->
+      <a class="navbar-brand" href="index.html">
+  <img src="images/logo.png" alt="Pop Art Salon Logo" height="50" class="d-inline-block align-text-top" id="logo-img">
+</a>
+
+
+      <!-- Toggle for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right Nav Items -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark fw-semibold" href="test.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="subservice.html">Hair Care & Styling</a></li>
+              <li><a class="dropdown-item" href="makeup.html">Makeup</a></li>
+              <li><a class="dropdown-item" href="#">Massage & Body</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="test.html">All Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🔸 Hero Section -->
+  <header class="hero-section d-flex align-items-center justify-content-center">
+    
+  </header>
+<section class="three-layer-section" >
+  <div class="background-layer"></div>
+  <div class="white-layer"></div>
+
+  <div class="content container">
+    <div class="row align-items-center justify-content-center">
+     
+      <div class="col-md-3 text-center text-md-start ">
+        <h2 class="vertical-text" >BOLD BEAUTY <span>2025</span></h2>
+      </div>
+
+    
+      <div class="col-md-5">
+        <h2 class="section-title"data-aos="fade-up" data-aos-duration="1500">Step Into Style</h2>
+        <p class="section-desc"data-aos="fade-up" data-aos-duration="1500">
+      Immerse yourself in a world of bold beauty inspired by the iconic pop-art movement.
+Vibrant colors, striking styles, and flawless looks await — because at our salon, you’re the masterpiece.
+        </p>
+        <div class="underline-link" data-aos="fade-up" data-aos-duration="1500" onclick="location.href='test.html'">
+          <span>Explore More</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="popart-collection py-5">
+  <div class="container">
+    <!-- Row 1 -->
+    <div class="row align-items-start mb-5">
+      <!-- Left Text -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h2 class=" display-5">Dive Into the World of Beauty</h2>
+        <p class="text-muted mt-3">
+        Immerse yourself in a space where style meets confidence. From stunning hair makeovers to flawless makeup and soothing skin treatments — every service is designed to bring out your best self.<br>
+<b>Elevate your beauty with the touch of perfection.</b>
+        </p>
+      </div>
+
+      <!-- Right Two Vertical Images -->
+      <div class="col-md-8 d-flex gap-3">
+        <div class="flex-fill">
+          <img src="images/img1.png" alt="Model 1" class="img-fluid  shadow-sm tall-img"  data-aos="fade-up" data-aos-duration="1200">
+        </div>
+        <div class="flex-fill">
+          <img src="images/img2.png" alt="Model 2" class="img-fluid  shadow-sm short-img"  data-aos="fade-right" data-aos-duration="1200">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row align-items-center">
+      <!-- Left Large Image -->
+     
+      <div class="col-md-9" >
+        <div class="image-reveal" data-aos="fade" data-aos-delay="200">
+        <img src="images/img3.jpg" alt="Hero" class="img-fluid  shadow-sm w-100 ">
+      </div>
+</div>
+      <!-- Right Explore Box -->
+      <div class="col-md-3 d-flex justify-content-center align-items-center">
+     <div class="explore-box text-center border border-3 border-dark" onclick="location.href='test.html'"">
+  <div class="circle"></div>
+  <h5 class="explore-text" >EXPLORE</h5>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="stats-section text-center ">
+  <div class="container">
+    <h2 class="mb-2" style="font-size: 2.5rem;">Celebrating Beauty, Style & Confidence</h2>
+    <p class="text-muted mb-5">
+      From stunning hair transformations to flawless makeovers, our salon has built a reputation for excellence, creativity, and care.
+    </p>
+
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-3 mb-4">
+        <h3 class="counter" data-target="2260">0</h3>
+        <p class="small text-muted">Happy Clients</p>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <h3 class="counter" data-target="1324">0</h3>
+        <p class="small text-muted">Hair Makeovers</p>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <h3 class="counter" data-target="3453">0</h3>
+        <p class="small text-muted">Bridal Looks</p>
+      </div>
+      <div class="col-6 col-md-3 mb-4">
+        <h3 class="counter" data-target="9786">0</h3>
+        <p class="small text-muted">Beauty Treatments</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="gallery-header container ">
+ <h1 class="gallery-title">Our Signature<br>Salon Gallery</h1>
+<p class="gallery-subtext">
+  Step into the world of beauty and confidence! Explore stunning hair transformations, flawless makeup looks, and radiant makeovers. 
+  Share your glow on social media — tag us and join our community of beauty lovers. #SalonStyleGlow
+</p>
+
+</section>
+
+<section class="gallery-section py-5">
+  <div class="gallery-container">
+
+   
+    <div class="explore-box" data-aos="fade-right" onclick="location.href='test.html'">
+      <div class="circle"></div>
+      <span class="explore-text">EXPLORE</span>
+    </div>
+
+    <!-- RIGHT SIDE IMAGES GRID -->
+    <div class="images-grid">
+
+      <img src="images/img6.jpg" class="img smallt" data-aos="fade-up" />
+       <video class="img tall" data-aos="fade-up" data-aos-delay="400" autoplay muted loop playsinline>
+    <source src="images/video.mp4" type="video/mp4">
+</video>
+
+      <img src="images/img3.jpg" class="img smallt" data-aos="fade-up" data-aos-delay="400" />
+
+      <img src="images/img4.jpg" class="img smallt" data-aos="fade-up" />
+     
+      <img src="images/img9.jpg" class="img smallt" data-aos="fade-up" data-aos-delay="400" />
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="mens-corner-section  text-center">
+  <div class="container">
+
+    <h2 class="mb-2" style="font-size: 4rem; font-weight: 900;">The Gentlemen’s Corner</h2>
+    <p class="text-muted mb-4 w-75 mx-auto">
+      Discover a space tailored for the modern man. Our expert stylists craft precision haircuts, classic beard designs, and rejuvenating treatments — all designed to elevate your look with sophistication and ease.
+    </p>
+
+    <!-- Swiper -->
+    <div class="swiper mensSwiper mt-5">
+      <div class="swiper-wrapper">
+
+        <!-- 6 images -->
+        <div class="swiper-slide"><img src="images/m1.jpg" /></div>
+        <div class="swiper-slide"><img src="images/m5.jpg" /></div>
+        <div class="swiper-slide"><img src="images/m4.jpg" /></div>
+        <div class="swiper-slide"><img src="images/m3.jpg" /></div>
+        
+        <div class="swiper-slide"><img src="images/m7.jpg" /></div>
+        <div class="swiper-slide"><img src="images/m6.jpg" /></div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+ <p style="text-align: center; margin: 30px 90px;">
+Step into a world of beauty and comfort!<br>
+Wonderland welcomes you to enjoy premium services that make you look and feel your best. From makeovers to relaxing treatments, our expert team is ready to create a magical experience.<br>
+Book your appointment today and secure your spot — your perfect beauty moment is just one step away!
+</p>
+
+ <section class="newsletter-section">
+
+    <div class="newsletter-container">
+      <div class="newsletter-image">
+        <img src="images/img.jpg" alt="Shoes" />
+      </div>
+      <div class="newsletter-box">
+        <h2>Book Your Appointment</h2>
+       <a href="https://go.booker.com/location/WonderlandBeautySalon/service-menu" 
+   target="_blank" 
+   class="book-btn">
+   Book Your Appointment
+</a>
+
+      </div>
+    </div>
+  </section>
+<div class="modal fade" id="offerModal" tabindex="-1" aria-labelledby="offerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content offer-modal">
+
+      <!-- Close Button -->
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <!-- Text Content -->
+      <div class="modal-body">
+        <h3 class="fw-bold text-uppercase text-danger mb-3">Check Out Our Deals!</h3>
+        <p class="text-dark mb-4">
+          Exclusive discounts & seasonal packages just for you — book your next service and save more!
+        </p>
+        <a href="test.html" class="btn btn-danger px-4 py-2 fw-semibold ">
+          View Services
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- JS: Show Modal After 20 Seconds -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      if (!localStorage.getItem("offerShown")) {
+    setTimeout(function() {
+      var offerModal = new bootstrap.Modal(document.getElementById('offerModal'));
+      offerModal.show();
+          localStorage.setItem("offerShown", "true");
+    }, 2000); // 20 seconds = 20000 ms
+ } });
+</script>
+
+  <!-- Footer -->
+  <footer>
+  <img src="images/logo.png" alt="POP-ART Logo" class="footer-logo" />
+  <p>560 Mission St, San Francisco<br>CA 94 USA</p>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="test.html">Services</a>
+    <a href="test.html">Menu</a>
+    <a href="#">Testimonial</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <small>Copyright ©POP-ART 2020. All rights reserved</small>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mensSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
+    autoplay: { delay: 2000 },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      576: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+    },
+  });
+</script>
+
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  let animated = false;
+
+  function startCounter() {
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const speed = 200; // lower = faster
+      const updateCount = () => {
+        const current = +counter.innerText;
+        const increment = target / speed;
+
+        if (current < target) {
+          counter.innerText = Math.ceil(current + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  }
+
+  function checkScroll() {
+    const section = document.querySelector('.stats-section');
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && !animated) {
+      animated = true;
+      startCounter();
+    }
+  }
+
+  window.addEventListener('scroll', checkScroll);
+</script>
+
+  <!-- Bootstrap JS -->
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,           // run only once per scroll
+    duration: 1200,       // smooth animation speed
+    easing: 'ease-in-out' // optional nice motion
+  });
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

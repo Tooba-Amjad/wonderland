@@ -1,0 +1,506 @@
+
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+   font-family: "Mona Sans", "Helvetica Neue", Helvetica, Arial;
+}
+
+/* Hero Section with Background Image */
+.hero-section {
+  background-image: url('../images/service.png'); /* Use your uploaded image */
+  background-size: cover;
+  background-position: center;
+
+   height: 120%;
+  width: auto;
+  position: relative;
+  
+}
+
+
+/* Navbar styling */
+.navbar-brand {
+ 
+  letter-spacing: 2px;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff007a !important;
+}
+
+    .services-page {
+      display: flex;
+      padding: 50px;
+      padding-bottom: 0;
+      gap: 30px;
+    }
+    .main-content {
+      flex: 1;
+    }
+    
+.gallery-header {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.gallery-subtext {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+    .main-content h2 {
+      color: #ff4b5c;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    
+  .popart-collection h2{
+  font-weight: 900;
+
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .three-layer-section {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+.popart-collection{
+  padding: 0px !important;
+}
+ 
+
+  
+
+
+  .section-title {
+    font-size: 2rem;
+   color: rgba(0, 0, 0, 0.737) !important;
+
+    text-align: center;
+  }
+
+  .section-desc {
+    text-align: center;
+  }
+
+  .underline-link {
+    justify-content: center;
+  }
+}
+
+.tall-img {
+  height: 480px;
+  object-fit: cover;
+}
+
+.short-img {
+  height: 360px;
+  object-fit: cover;
+}
+.side-img {
+  
+  width: 100%;
+  height: auto;
+  
+  object-fit: cover;
+}
+
+
+.side-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+/* SHIFT both images upward (without affecting layout) */
+.side-img1 {
+  transform: translateY(15px);
+}
+
+
+/* Allow upwards movement to be visible */
+.col-md-3 {
+  overflow: visible;
+}
+
+
+.overlay {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 90, 0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: top .5s ease;
+  padding: 20px;
+}
+
+.service-card:hover .overlay {
+  top: 0;
+}
+
+.overlay h3 {
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 16px;
+
+}
+
+.overlay p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+
+
+/* Mobile: reset so they don't overlap */
+@media (max-width: 768px) {
+  .services-page{
+    padding: 2px;
+  }
+  .side-img1,
+  .side-img:last-child {
+    transform: translateY(0);
+  }
+  .overlay {
+    /* Make overlay visible on mobile at the bottom */
+    top: auto;
+    bottom: 0;
+    height: auto;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    justify-content: flex-end;
+    padding: 15px;
+    transition: none; /* Disable hover transition on mobile */
+  }
+  .overlay h3 {
+    font-size: 1rem; /* Smaller title for mobile */
+  }
+  .overlay p {
+    display: none; /* Hide paragraph on mobile to save space */
+  }
+  .gallery-title{
+    font-size: 2.5rem;
+  }
+  .hero-section{
+    background-image: url('/images/bg2.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Adjust height for mobile view */
+  }
+}
+.service-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.deals-section {
+  padding: 0px 0 !important;
+  background: white;
+  
+  color: black;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: black;
+  background-color: white;
+  letter-spacing: 1px;
+}
+
+/* Container layout */
+.deal-wrapper {
+  display: flex;
+  gap: 25px;
+ 
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Luxury coupon card */
+.deal-card {
+    width: 330px;;
+ height: max-content;
+background-color: white;
+  padding: 25px 25px 40px;
+  
+  border: 2px black  solid;
+  position: relative;
+ 
+  cursor: pointer;
+  transition: transform .4s ease;
+}
+.card2{
+    background-color: white !important;
+}
+.text-service{
+    padding: 30px 30px 0px;
+    margin: 30px 30px 0px;
+    color: rgba(0, 0, 0, 0.683);
+}
+
+/* Tear notch circles */
+.deal-card:before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+background-color: #53d0c4;
+  border-radius: 50%;
+}
+
+.deal-card:before { top: 0; left: 50%; transform: translateX(-50%) translateY(-50%); }
+
+
+.deal-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #ff007a;
+}
+
+.deal-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.deal-card ul li {
+  padding: 6px 0;
+  font-size: 1rem;
+  border-left: 3px solid #53d0c4;
+  padding-left: 12px;
+  margin-bottom: 6px;
+}
+
+/* Hover Animation */
+.deal-card:hover {
+  transform: translateY(-10px);
+
+}
+
+
+ 
+.stats-section{
+  padding: 60px 0px;
+}
+.stats-section h2{
+ font-weight: 900;
+}
+
+
+    footer {
+  background: #f1e108;
+  color: black;
+  text-align: center;
+  padding: 50px 0 30px;
+}
+
+.footer-logo {
+  width: 220px;      /* Adjust as needed */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer small {
+  display: block;
+  margin-top: 25px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Section Container */
+.three-layer-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Layer 1 — Background Color */
+.background-layer {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+}
+
+/* Layer 2 — White Block */
+.white-layer {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  background: #fdfdfd;
+  
+  z-index: 2;
+  border-radius: 5px;
+}
+
+/* Layer 3 — Text Content */
+.three-layer-section .content {
+  position: relative;
+  z-index: 3;
+  color: #000;
+}
+
+/* Typography */
+.vertical-text {
+
+  font-weight: 900;
+  font-size: 4rem;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: black;
+  letter-spacing: 2px;
+}
+
+.vertical-text span {
+  display: block;
+  font-size: 4rem;
+  font-weight: 900;
+}
+.vip-services-list li{
+  font-weight: 600;
+}
+.section-title {
+  font-weight: 800;
+  background-color: #fdfdfd;
+  font-size: 2.7rem;
+  color:  rgba(255, 0, 90, 0.85);
+  letter-spacing: -0.5px;
+}
+
+.section-desc {
+  
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Underline link */
+.underline-link {
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid  #53d0c4;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+  color:  #53d0c4;
+  cursor: pointer;
+}
+
+.underline-link:hover {
+  color: #ff007a;
+  border-color: #ff007a;
+}
+.popart-collection h2{
+  font-weight: 900;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .three-layer-section {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+.popart-collection{
+  padding: 0px !important;
+}
+  .white-layer {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .vertical-text span {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .section-desc {
+    text-align: center;
+  }
+
+  .underline-link {
+    justify-content: center;
+  }
+}

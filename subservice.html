@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hair Services — Wonderland Salon</title>
+  <link rel="stylesheet" href="/css/service.css">
+  <link rel="stylesheet" href="/css/haits.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    /* Add background to expanded mobile navbar */
+    @media (max-width: 991.98px) {
+      .navbar-collapse.show, .navbar-collapse.collapsing {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 0.5rem; /* Add some space from the top */
+      }
+      /* Adjust logo size on mobile */
+      #logo-img {
+        height: 25px;
+      }
+    }
+    /* Custom Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      border: 2px solid var(--hot-pink, #ff007a);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-top: 10px !important;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .dropdown-item {
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+    .dropdown-item:hover, .dropdown-item:focus {
+      background-color: var(--hot-pink, #ff007a);
+      color: white;
+    }
+
+    @font-face{
+      font-family: "Mona Sans";
+      src: local("Mona Sans"), local("MonaSans"), local("MonaSans-Regular");
+      font-weight: 400;
+      font-style: normal;
+      /* no external file - attempt to use installed system font; fallback below */
+    }
+    :root{
+      --turquoise: #53d0c4;
+      --hot-pink: #ff007a;
+      --pop-yellow: #f1e108;
+      --bg: #ffffff;
+      --text: #111217;
+      --muted: #6b6f76;
+      --card-radius: 14px;
+      --glass: rgba(255,255,255,0.7);
+      --shadow: 0 10px 30px rgba(16,18,24,0.08);
+      --accent-shadow: 0 8px 30px rgba(85, 0, 102, 0.06);
+    }
+    html,body{
+      font-family: "Mona Sans", "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Section wrapper */
+    .hair-section{
+      padding: 56px 22px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+ .hero-section {
+      background-image: url('/images/bg2.png');
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .hair-header{
+      display:flex;
+      align-items:flex-start;
+      gap:20px;
+      margin-bottom: 18px;
+      flex-wrap:wrap;
+    }
+    .hair-title{
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin:0;
+    }
+    .hair-tag{
+      font-size: 16px;
+      color: var(--muted);
+      margin-top:6px;
+      max-width: 740px;
+    }
+
+    /* Replace the entire .pill section with this: */
+
+/* Tabs (ARIA-style, flat, no rounded corners) */
+.category-pills {
+  display: flex;
+  gap: 2px;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  margin: 18px 0 28px 0;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 10px 18px;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.pill:hover {
+  color: var(--hot-pink);
+}
+
+.pill.active {
+  color: var(--text);
+  border-bottom-color: var(--hot-pink);
+}
+
+.pill:focus {
+  outline: none;
+  border-bottom-color: var(--turquoise);
+  background-color:var(--turquoise) ;
+}
+
+    /* Cards container */
+    .cards-wrap{
+      display:block;
+      margin-top: 12px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:18px;
+    }
+    @media (max-width: 992px){
+      .grid{ grid-template-columns: repeat(2,1fr); }
+      .hair-title{ font-size: 32px; }
+    }
+    @media (max-width: 600px){
+      .grid{ grid-template-columns: 1fr; }
+      .hair-section{ padding: 28px 14px; }
+      .hair-title{ font-size: 24px; }
+      .pill{ padding: 9px 12px; font-size:13px; }
+    }
+
+    /* Card */
+    .service-card{
+      background: white;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .18s cubic-bezier(.2,.9,.25,1), box-shadow .18s ease;
+      display:flex;
+      flex-direction:column;
+      min-height: 330px;
+      border: 1px solid rgba(12,12,12,0.03);
+    }
+    .service-card:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(13,18,35,0.12); }
+
+    .thumb{
+      height:300px !important;
+      width:100%;
+      display:block;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+    .thumb:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.06));
+      border-bottom-left-radius: var(--card-radius);
+      border-bottom-right-radius: var(--card-radius);
+    }
+    .card-body{
+      padding:14px 16px 18px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .service-title{
+      font-size:16px;
+      font-weight:800;
+      margin:0;
+      letter-spacing: -0.01em;
+    }
+    .service-meta{
+      color:var(--muted);
+      font-weight:600;
+      font-size:13px;
+    }
+    .price-row{
+      margin-top:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .price{
+      background: linear-gradient(90deg,var(--pop-yellow), #fff176);
+      color:#111;
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:800;
+      font-size:14px;
+      box-shadow: 0 6px 18px rgba(241,225,8,0.16);
+    }
+    .duration{
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      padding-left:6px;
+    }
+
+    /* small details collapsed area */
+    .details{
+      font-size:13px;
+      color:#3b3e44;
+      margin-top:8px;
+      max-height: 72px;
+      overflow:hidden;
+    }
+    .more-btn{
+      margin-top:8px;
+      border:none;
+      background:none;
+      color:var(--turquoise);
+      font-weight:700;
+      cursor:pointer;
+      font-size:13px;
+      padding:6px 0;
+      align-self:flex-start;
+    }
+
+    /* empty/no-content */
+    .no-content{
+      text-align:center;
+      color:var(--muted);
+      padding: 36px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(83,208,196,0.04), rgba(255,0,122,0.02));
+      font-weight:700;
+    }
+
+    /* small helper styles */
+    .section-subtitle{
+      color:var(--muted);
+      font-size:13px;
+      margin-top:4px;
+    }
+    /* tag on top-left of card */
+    .offer-badge{
+      position:absolute;
+      left:12px;
+      top:12px;
+      z-index:5;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,0.6);
+      color:white;
+      font-weight:800;
+      font-size:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    }
+    .thumb {
+  height:170px;
+  background-size:cover;
+  background-position:center;
+}
+
+
+    /* small decorative pop-art dot */
+    .pop-dot{
+      width:64px;height:64px;border-radius:50%;
+      position:absolute; right:-18px; top:-18px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.1) 35%, rgba(255,255,255,0.04) 100%);
+      transform: rotate(18deg);
+      opacity:.9;
+      filter: blur(.4px);
+    }
+
+    /* accessible focus */
+    .pill:focus, .more-btn:focus, .service-card:focus{ outline: 3px solid rgba(83,208,196,0.12); outline-offset:4px; }
+
+  
+</style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Pop Art Salon Logo" height="50" class="d-inline-block align-text-top" id="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark fw-semibold" href="test.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="subservice.html">Hair Care & Styling</a></li>
+              <li><a class="dropdown-item" href="makeup.html">Makeup</a></li>
+              <li><a class="dropdown-item" href="#">Massage & Body</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="test.html">All Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section d-flex align-items-center justify-content-center"></header>
+
+  <section class="hair-section" aria-label="Hair Services">
+    <div class="hair-header">
+      <div>
+        <h1 class="hair-title">Hair Care & Styling</h1>
+        <div class="section-subtitle hair-tag">Cuts, coloring, treatments, styling and extensions — for men and women. Tap a category to view offers.</div>
+      </div>
+    </div>
+
+    <div class="category-pills" role="tablist" aria-label="Hair categories"></div>
+
+    <div class="cards-wrap">
+      <div id="cardsGrid" class="grid" aria-live="polite"></div>
+      <div id="noContent" class="no-content" style="display:none">No services found for this category.</div>
+    </div>
+  </section>
+
+  <script>
+  const data = {
+  "Hair Care & Treatments": [
+    { id: 1, title: "3-Phase Transformation", duration: "2 hr", price: "$299", details: "For virgin/resistant hair. Includes Phase 1 solution, Phase 2 bonder, Phase 3 mask & conditioning. Straightens curly or puffy hair.", badge: "Popular", color: "#ffd7b3" ,img: "images/hairs/treatment/3phase.jpg"},
+    { id: 2, title: "Conditioning Treatment", duration: "15 min", price: "$39.99", details: "Add-on deep conditioning with Kevin Murphy or Joico professional products.", color: "#e8faff" ,img: "images/hairs/treatment/conditioning.jpg"},
+    { id: 3, title: "Hair Botox (Short)", duration: "1 hr 30 min", price: "$199", details: "Deep hydration & repair. Wash, conditioning, mask & blow dry included.", color: "#ffe9f0" ,img: "images/hairs/treatment/botox.jpg"},
+    { id: 4, title: "Hair Botox (Medium)", duration: "2 hr", price: "$249", details: "Deep hydration & repair. Wash, conditioning, mask & blow dry included.", color: "#e7fff7" ,img: "images/hairs/treatment/botox.jpg"},
+    { id: 5, title: "Hair Botox (Long/Thick)", duration: "3 hr", price: "$299", details: "Deep hydration & repair for long or thick hair.", color: "#f8f0d8" ,img: "images/hairs/treatment/botox.jpg"},
+    { id: 6, title: "Keratin Straightening (Short)", duration: "3 hr", price: "$199", details: "Formaldehyde-free. Smooth, shiny hair for up to 4 months.", color: "#fff3d9" ,img: "images/hairs/treatment/keratin.jpg"},
+    { id: 7, title: "Keratin Straightening (Medium)", duration: "3 hr 30 min", price: "$299", details: "Formaldehyde-free. Includes wash, conditioning, mask & blow dry.", color: "#fde7f0" ,img: "images/hairs/treatment/keratin.jpg"},
+    { id: 8, title: "Keratin Straightening (Long/Thick)", duration: "4 hr", price: "$399", details: "Formaldehyde-free. Smooth, shiny results lasting up to 4 months.", color: "#f2fff9" ,img: "images/hairs/treatment/keratin.jpg"},
+    { id: 9, title: "LEBEL / JOICO Treatment", duration: "1 hr", price: "$159 - $199", details: "‘Happiness for Your Hair’ treatment. Price varies by hair length.", color: "#fff0e3" ,img: "images/hairs/treatment/happiness.jpg"}
+  ],
+
+  "Hair Coloring": [
+    { id: 10, title: "Consultation", duration: "15 min", price: "Free", details: "Professional stylist consultation before coloring.", color: "#e8faff" ,img: "images/hairs/coloring/consultation.jpg"},
+    { id: 11, title: "Root Bleach", duration: "5 min", price: "$169", details: "Root bleach only. Root toning available for $149 extra.", color: "#fde7f0",img: "images/hairs/coloring/root_bleach.jpg" },
+    { id: 12, title: "Roots Bleaching & Toning", duration: "4 hr 30 min", price: "$345", details: "Wash and blow dry included.", badge: "Popular", color: "#fff3d9" ,img: "images/hairs/coloring/root_bleach_toning.jpg"  },
+    { id: 13, title: "Roots Touch Up", duration: "2 hr", price: "$199", details: "Quick and even roots touch up service.", color: "#f2fff9" ,img: "images/hairs/coloring/root_touchup.jpg" },
+    { id: 14, title: "Hair Toning (Short)", duration: "1 hr", price: "$149 - $159", details: "Includes blow dry. Price may vary.", color: "#fff0e3",img: "images/hairs/coloring/hair_toning.jpg" },
+    { id: 15, title: "Hair Toning (Medium)", duration: "1 hr 30 min", price: "$179", details: "Includes blow dry.", color: "#e8faff" ,img: "images/hairs/coloring/hair_toning.jpg" },
+    { id: 16, title: "Hair Toning (Long)", duration: "2 hr 30 min", price: "$199", details: "Includes blow dry. Price may vary.", color: "#ffd7b3",img: "images/hairs/coloring/hair_toning.jpg"  },
+    { id: 17, title: "Single Process (Short)", duration: "1 hr 20 min", price: "$159.90", details: "Wash, blow dry, styling included. Blowout +$50.", color: "#f8f0d8"  ,img: "images/hairs/coloring/single_process.jpg"},
+    { id: 18, title: "Single Process (Medium)", duration: "1 hr 10 min", price: "$199", details: "Wash, blow dry, styling included. Blowout +$50.", color: "#ffe9f0" ,img: "images/hairs/coloring/single_process.jpg" },
+    { id: 19, title: "Single Process (Long)", duration: "1 hr 30 min", price: "$249", details: "Wash, blow dry, styling included. Blowout +$50.", color: "#f2fff9" ,img: "images/hairs/coloring/single_process.jpg" },
+    { id: 20, title: "Single Process (Super Long)", duration: "1 hr 30 min", price: "$299", details: "Wash, blow dry, styling included. Blowout +$50.", color: "#fff3d9" ,img: "images/hairs/coloring/single_process.jpg" },
+    { id: 21, title: "Balayage (Short)", duration: "2 hr - 2 hr 30 min", price: "$399", details: "Includes trim, wash, conditioning, restore mask, Kevin Murphy after-color treatment & blow dry.", badge: "Top Pick", color: "#fde7f0" ,img: "images/hairs/coloring/Balayage.jpg" },
+    { id: 22, title: "Balayage (Medium)", duration: "2 hr 30 min - 3 hr", price: "$449", details: "Full balayage service for medium hair.", color: "#e8faff" ,img: "images/hairs/coloring/Balayage.jpg" },
+    { id: 23, title: "Balayage (Long)", duration: "3 hr 30 min", price: "$499", details: "Full service including trim, wash, conditioning, restore mask & blow dry.", color: "#fff0e3" ,img: "images/hairs/coloring/Balayage.jpg" },
+    { id: 24, title: "Ombre (Short)", duration: "2 hr", price: "$399", details: "Full ombre with wash, conditioning, and blow dry.", color: "#ffd7b3"  ,img: "images/hairs/coloring/ombre.jpg"},
+    { id: 25, title: "Ombre (Medium)", duration: "2 hr 30 min", price: "$449", details: "Ombre service for medium hair.", color: "#f2fff9" ,img: "images/hairs/coloring/ombre.jpg" },
+    { id: 26, title: "Ombre (Long)", duration: "3 hr 30 min", price: "$499", details: "Full ombre treatment with after-color care.", color: "#ffe9f0" ,img: "images/hairs/coloring/ombre.jpg" },
+    { id: 27, title: "Color Crystal Gloss (Short)", duration: "1 hr", price: "$149", details: "Wash, conditioning & blow dry included.", color: "#fff3d9" ,img: "images/hairs/coloring/Color_Crystal _Gloss.jpg" },
+    { id: 28, title: "Color Crystal Gloss (Medium)", duration: "5 min", price: "$199", details: "Wash, conditioning & blow dry included.", color: "#fde7f0" ,img: "images/hairs/coloring/Color_Crystal _Gloss.jpg" },
+    { id: 29, title: "Color Crystal Gloss (Long)", duration: "5 min", price: "$249", details: "Wash, conditioning & blow dry included.", color: "#e8faff" ,img: "images/hairs/coloring/Color_Crystal _Gloss.jpg" }
+  ],
+
+  "Haircuts": [
+    { id: 30, title: "Women's Hair Trim", duration: "30 min", price: "$59", details: "Simple trim to refresh ends.", color: "#fff2f4" ,img: "images/hairs/cuts/trim.jpg" },
+    { id: 31, title: "Short Lady's Haircut", duration: "1 hr", price: "$119", details: "Wash before cut, cut, wash/conditioner, blow dry.", badge: "Popular", color: "#fff0e3" ,img: "images/hairs/cuts/short.jpg"},
+    { id: 32, title: "Lady's Haircut (Medium)", duration: "1 hr 30 min", price: "$159", details: "Wash before cut, cut, wash/conditioner, blow dry.", color: "#f2fff9" ,img: "images/hairs/cuts/lady_haircut.jpg"},
+    { id: 33, title: "Lady's Haircut (Long)", duration: "1 hr 45 min", price: "$199", details: "Complete long-hair cut package.", color: "#ffe9f0" ,img: "images/hairs/cuts/lady_haircut.jpg"},
+    { id: 34, title: "Men's Haircut", duration: "45 min", price: "$79 - $99", details: "Includes 2 washes & styling with Kevin Murphy products.", color: "#ffd7b3" ,img: "images/hairs/cuts/man_haircut.jpg" },
+    { id: 35, title: "Men's Long Haircut", duration: "1 hr 30 min", price: "$99", details: "Long men’s haircut with wash & styling.", color: "#fff3d9" ,img: "images/hairs/cuts/man_long_haircut.jpg" }
+  ],
+
+  "Blow Drys & Styling": [
+    { id: 36, title: "Short Hair Blow Dry", duration: "1 hr", price: "$69", details: "Wash & conditioner with Kevin Murphy. Hot tools not included.", color: "#f8f0d8"  ,img: "images/hairs/blowdry/short.jpg"},
+    { id: 37, title: "Medium Hair Blow Dry", duration: "1 hr 15 min", price: "$89", details: "Wash & conditioner with Kevin Murphy. Styling with Dyson +$30.", color: "#fde7f0"  ,img: "images/hairs/blowdry/medium.jpg"},
+    { id: 38, title: "Long Hair Blow Dry", duration: "1 hr 30 min", price: "$109", details: "Wash & conditioner with Kevin Murphy.", color: "#e8faff"  ,img: "images/hairs/blowdry/long.jpg"},
+    { id: 39, title: "Hollywood Waves", duration: "1 hr 30 min", price: "$149 - $199", details: "Includes wash, conditioning, and Dyson styling tools.", badge: "Top Pick", color: "#fff0e3"  ,img: "images/hairs/blowdry/hollywood.jpg"},
+    { id: 40, title: "Bridal Updo", duration: "1 hr 30 min", price: "$499", details: "Wash, blow out, and up-do for your special day.", badge: "Premium", color: "#ffd7b3"  ,img: "images/hairs/blowdry/brial.jpg"}
+  ],
+
+  "Barber Services": [
+    { id: 41, title: "Beard Trim", duration: "30 min", price: "$30", details: "Beard shaping and grooming.", color: "#f2fff9"  ,img: "images/hairs/barber/trim.jpg"},
+    { id: 42, title: "Beard Coloring", duration: "1 hr", price: "$99", details: "Professional beard dyeing service.", color: "#fff3d9"  ,img: "images/hairs/barber/color.jpg"},
+    { id: 43, title: "Men's Fade & Beard Trim", duration: "1 hr 30 min", price: "$299", details: "Fresh fade with beard trim. Wash & style included.", badge: "Popular", color: "#fde7f0" ,img: "images/hairs/barber/fade.jpg" },
+    { id: 44, title: "Men's Long Hair & Beard Trim", duration: "2 hr", price: "$399", details: "Full grooming combo for long hair & beard.", color: "#e8faff"  ,img: "images/hairs/barber/long.jpg"}
+  ],
+
+  "Hair Extensions": [
+    { id: 45, title: "Classic (1D)", duration: "1 hr", price: "$100", details: "Natural volume extension application.", color: "#fff0e3" ,img: "images/hairs/extension/classic.jpg" },
+    { id: 46, title: "HYBRID (1.5D)", duration: "1 hr 30 min", price: "$115", details: "Balanced fullness & natural look.", color: "#ffe9f0" ,img: "images/hairs/extension/hybrid.jpg" },
+    { id: 47, title: "VOLUME (2D)", duration: "2 hr", price: "$129", details: "Added density for thicker appearance.", color: "#e8faff" ,img: "images/hairs/extension/volume.jpg" },
+    { id: 48, title: "VOLUME (3D)", duration: "2 hr 30 min", price: "$139", details: "Fullest, most glamorous look.", badge: "Top Pick", color: "#ffd7b3" ,img: "images/hairs/extension/volume.jpg" }
+  ]
+};
+
+    function groupServices(services) {
+      const groups = {};
+      services.forEach(s => {
+        const base = s.title.replace(/\s*\(.*?\)/, '').trim();
+        const variant = (s.title.match(/\((.*?)\)/)?.[1]) || "Standard";
+        if (!groups[base]) groups[base] = { base, variants: [] };
+        groups[base].variants.push({ ...s, variant });
+      });
+      return Object.values(groups);
+    }
+
+    const categories = Object.keys(data);
+    const pillsContainer = document.querySelector('.category-pills');
+    const grid = document.getElementById('cardsGrid');
+    const noContent = document.getElementById('noContent');
+    let activeCategory = categories[0];
+
+    categories.forEach((cat, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'pill' + (idx===0 ? ' active': '');
+      btn.type = 'button';
+      btn.setAttribute('data-cat',cat);
+      btn.innerText = cat;
+      btn.addEventListener('click', onPillClick);
+      pillsContainer.appendChild(btn);
+    });
+
+    renderCategory(activeCategory);
+
+    function onPillClick(e){
+      const cat = e.currentTarget.getAttribute('data-cat');
+      if(cat === activeCategory) return;
+      document.querySelectorAll('.pill').forEach(p => {
+        p.classList.toggle('active', p.getAttribute('data-cat') === cat);
+      });
+      activeCategory = cat;
+      renderCategory(cat);
+      window.scrollTo({ top: document.querySelector('.cards-wrap').offsetTop - 18, behavior:'smooth' });
+    }
+
+    function renderCategory(cat){
+      grid.innerHTML = '';
+      const items = data[cat] || [];
+      if(!items.length){ noContent.style.display='block'; return; }
+      noContent.style.display='none';
+
+      const groups = groupServices(items);
+      groups.forEach(group => {
+        const first = group.variants[0];
+        const card = document.createElement('article');
+        card.className = 'service-card';
+        card.setAttribute('tabindex','0');
+
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb';
+    const imageSrc = first.img 
+  ? first.img 
+  : svgPlaceholder(group.base, first.color || '#f3f3f3');
+thumb.style.backgroundImage = `url("${imageSrc}")`;
+
+
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+
+        const h = document.createElement('h3');
+        h.className = 'service-title';
+        h.innerText = group.base;
+
+       const select = document.createElement('select');
+select.className = 'form-select mb-2';
+group.variants.forEach(v => {
+  const opt = document.createElement('option');
+  opt.value = v.id;
+  opt.innerText = `${v.variant} — ${v.price} (${v.duration})`;
+  select.appendChild(opt);
+});
+
+// 👇 add this
+if (group.variants.length === 1) {
+  select.disabled = true;
+  select.style.opacity = "0.6";
+  select.style.cursor = "not-allowed";
+}
+
+        
+        const details = document.createElement('div');
+        details.className = 'details';
+        details.innerText = first.details || '';
+
+        select.addEventListener('change', e => {
+          const selected = group.variants.find(v => v.id == e.target.value);
+          details.innerText = selected.details;
+        });
+
+        body.appendChild(h);
+        body.appendChild(select);
+        body.appendChild(details);
+        card.appendChild(thumb);
+        card.appendChild(body);
+        grid.appendChild(card);
+      });
+    }
+
+    // SVG background generator
+    function svgPlaceholder(title, bg){
+      const initials = title.split(' ').slice(0,2).map(w => w[0]).join('').toUpperCase();
+      const svg = `
+        <svg xmlns='http://www.w3.org/2000/svg' width='800' height='500'>
+          <rect width='100%' height='100%' fill='${bg}' rx='18'/>
+          <text x='40' y='120' font-family='Arial' font-weight='800' font-size='42' fill='rgba(0,0,0,0.25)'>${initials}</text>
+          <text x='40' y='180' font-family='Arial' font-weight='700' font-size='36' fill='rgba(0,0,0,0.8)'>${title}</text>
+        </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

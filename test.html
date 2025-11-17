@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Wonderland Beauty Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/service.css">
+  <style>
+    /* Add background to expanded mobile navbar */
+    @media (max-width: 991.98px) {
+      .navbar-collapse.show, .navbar-collapse.collapsing {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-top: 0.5rem; /* Add space from the top */
+      }
+      /* Adjust logo size on mobile */
+      #logo-img {
+        height: 25px;
+      }
+    }
+    /* Custom Dropdown Styling */
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      border: 2px solid #ff007a; /* Hot Pink Border */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin-top: 10px !important;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .dropdown-item {
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: all 0.2s ease;
+    }
+    .dropdown-item:hover, .dropdown-item:focus {
+      background-color: #ff007a; /* Hot Pink on hover */
+      color: white;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <!-- 🔸 Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" >
+    <div class="container-fluid px-5">
+      <!-- Left Logo -->
+      <a class="navbar-brand" href="index.html">
+  <img src="images/logo.png" alt="Pop Art Salon Logo" height="50" class="d-inline-block align-text-top" id="logo-img">
+</a>
+
+
+      <!-- Toggle for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Right Nav Items -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-4">
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark fw-semibold" href="test.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="subservice.html">Hair Care & Styling</a></li>
+              <li><a class="dropdown-item" href="makeup.html">Makeup</a></li>
+              <li><a class="dropdown-item" href="#">Massage & Body</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="test.html">All Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🔸 Hero Section -->
+  <header class="hero-section d-flex align-items-center justify-content-center">
+</header>
+<div class="text-service">
+<p style="text-align: center;">Step into a world where beauty meets precision. Whether you're looking for a fresh haircut, a glowing makeover, or a relaxing treatment — our salon offers a range of professional services designed to enhance your natural charm and confidence.</p>
+</div>
+  <div class="services-page">
+  
+
+   <section class="popart-collection py-5">
+  <div class="container">
+    <!-- Row 1 -->
+    <div class="row align-items-center">
+      <!-- Left Text -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h2 class=" display-5">OUR SERVICES</h2>
+        <div class="service-card">
+     
+     
+      
+</div>
+</div>
+     <!-- Right Two Vertical Images -->
+<div class="col-md-8 d-flex gap-3 mb-3">
+
+  <div class="service-card flex-fill" data-link="subservice.html">
+    <img src="images/services/5.png" alt="Model 1" class="img-fluid shadow-sm tall-img">
+    <div class="overlay">
+      <h3>Hair Care & Styling</h3>
+      <p>Complete hair care for men and women – from cuts, coloring, and styling to blow dries, perms, waves, extensions, and barber services.</p>
+    </div>
+  </div>
+
+  <div class="service-card flex-fill" data-link="subservice.html">
+    <img src="images/services/4.png" alt="Model 2" class="img-fluid shadow-sm short-img">
+    <div class="overlay">
+      <h3>Facials & Face Treatments</h3>
+      <p>Express facials, deep cleansing, anti-acne therapy, anti-aging treatments, dermaplane, microneedling, and face massages for men and women</p>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row align-items-center">
+      <!-- Left Large Image -->
+    <div class="col-9">
+  <div class="service-card" data-link="makeup.html">
+    <img src="images/services/8.png" alt="Hero" class="img-fluid shadow-sm w-100">
+    <div class="overlay">
+      <h3>Massage & Body Services</h3>
+      <p>Neck, back, foot, Swedish, deep tissue, Thai, hot stone, anti-stress, and couples massages for men and women to relax, rejuvenate, and restore wellness.</p>
+    </div>
+  </div>
+</div>
+
+<div class="col-3 d-flex flex-column gap-3">
+
+  <div class="service-card" data-link="makeup.html">
+    <img src="images/services/7.png" class="side-img side-img1" alt="Deal Image 1">
+    <div class="overlay">
+      <h3>Makeup
+      </h3>
+      <p>Everyday neutral, glam, bridal, and red carpet makeup services for men and women to look flawless for any occasion</p>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <img src="images/services/3.png" class="side-img" alt="Deal Image 2">
+    <div class="overlay">
+      <h3>Eyelash & Eyebrow Services</h3>
+      <p>Classic, hybrid, and volume eyelash extensions, Kim effect lashes, brow clean-up, and lamination for men and women to define, lift, and enhance eyes beautifully</p>
+    </div>
+  </div>
+
+</div>
+
+ 
+
+
+    </div>
+
+   
+      <!-- Row 3 (Three images in one row) -->
+      <div class="row g-3 mt-2">
+        <div class="col-4">
+          <div class="service-card">
+            <img src="images/services/1.png" alt="Model 1" class="img-fluid shadow-sm">
+            <div class="overlay">
+              <h3>Laser Hair Removal</h3>
+              <p>Small, medium, and large area laser hair removal, full-body sessions, and specialized packages for men and women for smooth, flawless, and painless results.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="service-card">
+            <img src="images/services/6.png" alt="Model 2" class="img-fluid shadow-sm">
+            <div class="overlay">
+              <h3>Manicures & Pedicures</h3>
+              <p>Manicures, pedicures, gel and hard gel treatments, nail extensions, and creative nail art for men, women, and kids to keep hands and feet healthy, polished, and stylish.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="service-card">
+            <img src="images/services/2.png" alt="Model 3" class="img-fluid shadow-sm">
+            <div class="overlay">
+              <h3>Waxing</h3>
+              <p>Upper lip, underarm, full face, arms, legs, bikini, and specialized waxing services for men and women for smooth, flawless skin.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+</section>
+
+  </div>
+<section class="three-layer-section">
+  <div class="background-layer"></div>
+  <div class="white-layer"></div>
+
+  <div class="content container">
+    <div class="row align-items-center justify-content-center">
+     
+      <div class="col-md-3 text-center text-md-start">
+        <h2 class="vertical-text">VIP <span>SERVICES</span></h2>
+      </div>
+
+      <div class="col-md-7">
+        <h2 class="section-title" data-aos="fade-up" data-aos-duration="1500">Exclusive VIP Treatments</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-duration="1500">
+          Experience luxury like never before with our VIP services. From personalized women's and men's haircuts in private rooms with premium styling to bespoke coloring sessions with top colorists — every detail is designed for your ultimate comfort and style.
+        </p>
+        <ul class="vip-services-list" data-aos="fade-up" data-aos-duration="1500">
+          <li>Women's Haircut in VIP Room – Private room, premium styling, head massage</li>
+          <li>Men's Haircut in VIP Room – Private room, premium styling, head massage</li>
+          <li>Hair Color with Top Colorist – Toning, Balayage, Highlights, Add-ons available</li>
+        </ul>
+        <div class="underline-link" data-aos="fade-up" data-aos-duration="1500">
+          <span>Book Your VIP Experience</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="gallery-header container py-5 ">
+ <h1 class="gallery-title"> EXCLUSIVE DEALS <br>& PROMOTIONS</h1>
+<p class="gallery-subtext">
+  Step into the world of beauty and confidence! Explore stunning hair transformations, flawless makeup looks, and radiant makeovers. 
+  Share your glow on social media — tag us and join our community of beauty lovers. #SalonStyleGlow
+</p>
+
+</section>
+
+
+<section class="deals-section">
+  <div class="container">
+   
+
+    <div class="deal-wrapper">
+
+      <!-- Category 1 -->
+      <div class="deal-card">
+        <h3>DISCOUNTS</h3>
+        <ul>
+          <li>Military — <strong>10% OFF</strong></li>
+          <li>Students — <strong>5% OFF</strong></li>
+          <li>Senior — <strong>10% OFF</strong></li>
+          <li>Early Birds (10am-12pm) — <strong>10% OFF</strong></li>
+          <li>Referral — <strong>10% + Gift</strong></li>
+          <li>Regular Customer Program — <strong>5%-30% OFF</strong></li>
+        </ul>
+      </div>
+ <div class="deal-card card2">
+        <h3>SEASONAL PACKAGES</h3>
+        <ul>
+          <li>Color Refresh (Short Hair) — <strong>$300</strong></li>
+          <li>Color Refresh (Long Hair) — <strong>$450</strong></li>
+          <li>Everlasting Blondy (Short Hair) — <strong>$450</strong></li>
+          <li>Everlasting Blondy (Long Hair) — <strong>$650</strong></li>
+          <li>Family Package — <strong>50% OFF kids haircut</strong></li>
+          <li>Annual Package — <strong>Men: $650 / Women: $1500–$1800 / Mani+Pedi: $2000</strong></li>
+        </ul>
+      </div>
+      <!-- Category 2 -->
+      <div class="deal-card ">
+        <h3>PROMOTIONS</h3>
+        <ul>
+          <li>First Time Visit — <strong>10% OFF haircut + blow dry</strong></li>
+          <li>Facial Service — <strong>Free 15 mins massage</strong></li>
+          <li>Combo Promo — <strong>Hair + Nails = 15% OFF</strong></li>
+        </ul>
+      </div>
+
+      <!-- Category 3 -->
+     
+
+    </div>
+  </div>
+</section>
+<div>
+  <img src="images/interlinky.png" style="width: 100%; height: 30%; object-fit: cover; margin-top:-240px ;">
+</div>
+<div class="text-service">
+<p style="text-align: center;">Because beauty deserves to be celebrated! Enjoy exclusive salon offers and limited-time packages crafted to give you luxury experiences at the best value. Treat yourself — you’ve earned it.</p>
+</div>
+  
+
+
+  <footer>
+  <img src="images/logo.png" alt="POP-ART Logo" class="footer-logo" />
+  <p>560 Mission St, San Francisco<br>CA 94 USA</p>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="test.html">Services</a>
+    <a href="test.html">Menu</a>
+    <a href="#">Testimonial</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <small>Copyright ©POP-ART 2020. All rights reserved</small>
+</footer>
+<script>
+  document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", function (e) {
+      const link = card.getAttribute("data-link");
+      if (link) {
+        window.location.href = link;
+      }
+    });
+  });
+</script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
